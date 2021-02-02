@@ -1,0 +1,92 @@
+/*	-INFORMATION-
+	Subject:	Subclass
+	Effect:		This script adds a subclass for the Paladin, called "Oath of Steel"
+	Code by:	Sarafia
+	Date:		2021-02-01
+*/
+
+var iFileName = "Paladin - Oath of Steel.js";
+RequiredSheetVersion(13);
+
+// Define the source
+SourceList["HB:LOoS"] = {
+	name : "Homebrew: Luck Oath of Steel",
+	abbreviation : "HB:LOoS",
+	group : "Luck Homebrew",
+	url : "none",
+	date : "2021/02/01",
+};
+
+AddSubClass("paladin", "oath of steel", {
+	regExpSearch : /^(((?=.*(steel))((?=.*paladin)|((?=.*(exalted|sacred|holy|divine))(?=.*(knight|fighter|warrior|warlord|trooper)))))|((?=.*(steel))(?=.*(knight|fighter|warrior|warlord|trooper)))).*$/i,
+	subname : "Oath of Steel",
+	source : ["HB:LOoS", 1],
+	features : {
+		"subclassfeature3" : {
+			name : "Channel Divinity: Iron Guard",
+			source : ["HB:LOoS", 1],
+			minlevel : 3,
+			description : desc([
+				"when you take bludgeoning, piercing or slashing damage, you can use your channel divinity as a reaction to reduce your damage by 1d10 plus your paladin level"
+			]),
+			action : ["reaction", ""],
+			spellcastingExtra : ["longstrider", "zephyr strike-xgte", "magic weapon", "spiritual weapon", "conjure barrage", "elemental weapon", "fabricate", "leomund's secret chest", "conjure volley", "steel wind strike"]
+		},
+		"subclassfeature3.1" : {
+			name : "Channel Divinity: Guided Strike",
+			source : ["HB:LOoS", 1],
+			minlevel : 3,
+			description : desc([
+				"You can use your Channel Divinity to strike with supernatural accuracy. When you make an attack roll, you can use your Channel Divinity to gain a +10 bonus to the roll.",
+				"You make this choice after you see the roll, but before the DM says whether the attack hits or misses."
+			]),
+			action : ["action", ""]
+		},
+		"subclassfeature3.2" : {
+			name : "Steel Tender",
+			source : ["HB:LOoS", 1],
+			minlevel : 3,
+			description : desc([
+				"When you take this Oath, you learn to apply your healing to metals as well, Your lay on hands affect can affect Constructs",
+       				 " - You may use 5 points of lay on hands to cast Mending"
+			]),
+			action : ["action", ""]
+		},
+		"subclassfeature7" : {
+			name : "Aura of Steel",
+			source : ["HB:LOoS", 1],
+			minlevel : 7,
+			description : desc([
+				"Starting at 7th level, Bludgeoning, Piercing and Slashing damage that you and friendly creatures within 10 feet of you take from non magical weapons is reduced by an amount equal to your Charisma modifier while you are still conscious",
+        			"at 18th level the range of this aura is increased to 30 feet"
+			]),
+			additional : levels.map( function(n) {
+				return (n < 7 ? "" : (n < 18 ? "10-foot aura" : "30-foot aura"));
+			})
+		},
+		"subclassfeature15" : {
+			name : "The Best Defense",
+      source : ["HB:LOoS", 1],
+			minlevel : 15,
+			description : desc([
+				"Starting at 15th level you learn to transiton from your defensive guard to offensive strikes.",
+				"When you use your iron guard you make a single melee weapon attack against the creature that attacked if its within your reach"
+			]),
+			action : ["reaction", ""]
+		},
+		"subclassfeature20" : {
+			name : "Saint of Steel",
+			source : ["HB:LOoS", 1],
+			minlevel : 20,
+			description : desc([
+				"at 20th level, you learn to merge with your weapon, and gain these benefits:",
+				" - You Cannot be Disarmed",
+				" - You can add your Charisma modifier to your Armour Class",
+       	" - When you take the Attack action on your turn, You can take an Attack action as a Bonus Action"
+			]),
+			recovery : "long rest",
+			usages : 1,
+			action : ["action", ""]
+		}
+	}
+});
