@@ -1,0 +1,70 @@
+var iFileName = "Cleric - Winter Domain.js";
+RequiredSheetVersion(12.999);
+
+SourceList["HB:HHWD"] = {
+	name : "Homebrew: HadesHerald Winter Domain",
+	abbreviation : "HB:HHWD",
+	group : "Luck Homebrew",
+	url : "https://www.dmsguild.com/product/194789/",
+	date : "2016/12/08"
+};
+
+AddSubClass("cleric", "winter domain", {
+	regExpSearch : /^(?=.*(cleric|priest|clergy|acolyte))(?=.*winter|cold).*$/i,
+	subname : "Winter Domain",
+	source : ["HB:HHWD", 1],
+	spellcastingExtra : ["armor of agathys", "ice knife", "snilloc's snowball swarm", "skywrite", "slow", "water walk", "fire shield", "ice storm", "cone of cold", "control winds"],
+	features : {
+		"subclassfeature1" : {
+			name : "Snow Step",
+			source : ["HB:HHWD", 0],
+			minlevel : 1,
+			description : "\n   " + "Areas of snow, ice, and similar debris are never treated as difficult terrain for me." + "\n   " + "In addition, I'm acclimated to cold climates as described in chapter 5 of the Dungeon Master's" + "\n   " + "Guide."
+		},
+		"subclassfeature1.1" : {
+			name : "Winter's Bite",
+			source : ["HB:HHWD", 0],
+			minlevel : 1,
+			description : "\n   " + "I learn the Frostbite and Ray of Frost cantrips",
+			spellcastingBonus : [{
+				name : "Frostbite",
+				spells : ["frostbite"],
+				selection : ["frostbite"],
+			}, {
+				name : "Ray of Frost",
+				spells : ["ray of frost"],
+				selection : ["ray of frost"],
+			}]
+		},
+		"subclassfeature2" : {
+			name : "Channel Divinity: Howling Storm",
+			source : ["HB:HHWD", 0],
+			minlevel : 2,
+			description : "\n   " + "I may summon a blizzard into being to drain a creature.  As a reaction, when a creature within" + "\n   " + "60 feet makes a saving throw I may use my channel divinity to deal cold damage equal to" + "\n   " + "my cleric level and give them disadvantage on the saving throw.",
+			action : ["reaction", ""]
+		},
+		"subclassfeature6" : {
+			name : "At Home in Snow",
+			source : ["HB:HHWD", 0],
+			minlevel : 6,
+                        
+                        description : "\n   " + "My god grants me the ability to survive and channel their domain:" + "\n   " + "- I gain resistance to cold damage" + "\n   " + "- When I damage a creature that has resistance to cold damage I may choose to ignore it with" + "\n   " + "that spell or attack.  I can use this ability a number of times equal to your Wisdom" + "\n   " + "modifier (a minimum of once). I regain all expended uses when I finish a long rest.",
+			dmgres : ["Cold"]
+		},
+		"subclassfeature8" : {
+			name : "Potent Spellcasting",
+			source : ["HB:HHWD", 0],
+			minlevel : 8,
+			description : "\n   " + "I add my Wisdom modifier to the damage I deal with my cleric cantrips",
+			calcChanges : {
+				atkCalc : ["if (classes.known.cleric && classes.known.cleric.level > 7 && thisWeapon[4].indexOf('cleric') !== -1 && thisWeapon[3] && SpellsList[thisWeapon[3]].level === 0) { output.extraDmg += What('Wis Mod'); }; ", "My cleric cantrips get my Wisdom modifier added to their damage."]
+			}
+		},
+		"subclassfeature17" : {
+			name : "Frost Build-Up",
+			source : ["HB:HHWD", 0],
+			minlevel : 17,
+			description : "\n   " + "When I deal a creature cold damage, I may restrain it until the start of its next turn." + "\n   " + "Once I've used this ability, I cannot use it again until the start of my next turn."
+		}
+	}
+});
