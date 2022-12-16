@@ -1,6 +1,6 @@
 /*	-INFORMATION-
 	Subject:	Subclass
-	Effect:		This script adds a subclass for the Paladin, called "Oath of Steel"
+	Effect:		This script adds a subclass for the Warlock, called "The Great Tree"
 	Code by:	Sarafia
 	Date:		2022-12-16
 */
@@ -9,17 +9,18 @@ var iFileName = "warlock - the great tree.js";
 RequiredSheetVersion(13);
 
 // Define the source
-SourceList["HB:LOoS"] = {
+SourceList["HB:Ltgt"] = {
 	name : "Homebrew: the great tree",
-	abbreviation : "HB:LOoS",
+	abbreviation : "HB:Ltgt",
 	group : "Luck Homebrew",
 	url : "none",
 	date : "2022/12/16",
 };
 
 AddSubClass("warlock", "the great tree", {
+	regExpSearch : /^(((?=.*(tree))((?=.*warlock)|((?=.*(exalted|sacred|))(?=.*(fighter|warrior|warlord|trooper)))))|((?=.*(tree))(?=.*(fighter|warrior|warlord|trooper)))).*$/i,
 	subname : "the great tree",
-	source : ["HB:LOoS", 1],
+	source : ["HB:Ltgt", 1],
 	spellcastingExtra : ["ensnaring strike", "entangle", "barkskin", "spike growth", "plant growth", "speak with plants", "grasping vine", "guardian of nature", "tree stride", "wrath of nature"],
 	languageProfs : [1],
 	skills : ["Nature"],
@@ -44,9 +45,6 @@ AddSubClass("warlock", "the great tree", {
 				"You regain spent dice at the end of a Long rest"
 			]),
 			action : ["bonus action", ""],
-			eval : "warlock_the_great_tree_functions.add(newClassLvl.warlock);",
-			removeeval : "warlock_the_great_tree_functions.remove();",
-			changeeval : "warlock_the_great_tree_functions.update(newClassLvl.warlock);"
 		},
 		"subclassfeature6" : {
 			name : "Grow Together",
