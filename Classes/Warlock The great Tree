@@ -1,32 +1,26 @@
-/*	-WHAT IS THIS?-
-	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
-	Import this file using the "Add Extra Materials" bookmark.
-
-	-KEEP IN MIND-
-	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
-*/
-
 /*	-INFORMATION-
 	Subject:	Subclass
-	Effect:		This script adds a subclass for the Warlock, called "The Great Tree"
-	Code by:	MorePurpleMoreBetter
-	Date:		2022-12-16 (sheet v12.999)
+	Effect:		This script adds a subclass for the Paladin, called "Oath of Steel"
+	Code by:	Sarafia
+	Date:		2022-12-16
 */
 
-var iFileName = "Warlock - the Great tree.js";
-RequiredSheetVersion(12.999);
+var iFileName = "warlock - the great tree.js";
+RequiredSheetVersion(13);
 
-SourceList["sara"] = {
-	name : "sara",
-	abbreviation : "sara",
-	group : "homebrew",
-	url : 
+// Define the source
+SourceList["HB:LOoS"] = {
+	name : "Homebrew: the great tree",
+	abbreviation : "HB:LOoS",
+	group : "Luck Homebrew",
+	url : "none",
+	date : "2022/12/16",
 };
 
-AddSubClass("warlock", "the Great Tree", {
-	regExpSearch : /^(?=.*\bgreat\b)(?=.*\btree\b).*$/i,
-	subname : "the Great Tree",
-	source : ["LoL", 0],
+AddSubClass("warlock", "the great tree", {
+	regExpSearch : /^(((?=.*(tree))((?=.*warlock).*$/i,
+	subname : "the great tree",
+	source : ["HB:LOoS", 1],
 	spellcastingExtra : ["ensnaring strike", "entangle", "barkskin", "spike growth", "plant growth", "speak with plants", "grasping vine", "guardian of nature", "tree stride", "wrath of nature"],
 	languageProfs : [Druidic],
 	skills : ["Nature"],
