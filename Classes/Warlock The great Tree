@@ -38,9 +38,9 @@ AddSubClass("warlock", "the great tree", {
 			source : ["LoL", 0],
 			minlevel : 1,
 			description : desc([
-				"At first level you gain the ability to channel the life force of the world tree to heal wounds, You have a pool of d6's to spend for this healing. the amount is equal to your warlock level"
-				"as a bonus action you spend dice from the pool to heal yourself. The maximum number of dice you can spend is equal to your charisma modifyer (minimum number of one)."
-				"If the number rolled brings you to full health, you get any remainder as temporary hit points, with a maximum of your charisma mod plus your warlock level"
+				"At first level you gain the ability to channel the life force of the world tree to heal wounds, You have a pool of d6's to spend for this healing. the amount is equal to your warlock level",
+				"as a bonus action you spend dice from the pool to heal yourself. The maximum number of dice you can spend is equal to your charisma modifyer (minimum number of one).",
+				"If the number rolled brings you to full health, you get any remainder as temporary hit points, with a maximum of your charisma mod plus your warlock level",
 				"You regain spent dice at the end of a Long rest"
 			]),
 			action : ["bonus action", ""],
@@ -53,8 +53,8 @@ AddSubClass("warlock", "the great tree", {
 			source : ["LoL", 0],
 			minlevel : 6,
 			description : desc([
-				"The dice for your Put Down Roots feature increases to D8"
-				"In addition When you use your Put Down Roots feature, you may direct up to half of the healing rolled, to an allied creature within 30ft of you."
+				"The dice for your Put Down Roots feature increases to D8",
+				"In addition When you use your Put Down Roots feature, you may direct up to half of the healing rolled, to an allied creature within 30ft of you.",
 			]),
 		},
 		"subclassfeature10" : {
@@ -62,8 +62,8 @@ AddSubClass("warlock", "the great tree", {
 			source : ["LoL", 0],
 			minlevel : 10,
 			description : desc([
-				"Starting at 10th LeveL if you spend at least 1 hour in the sunlight, you have access to potable water and your skin has touched fertile soil in the past 24 hours, you do not need to eat to survive. Instead of sleeping, you can choose to meditate deeply, remaining semiconscious, for four hours a day. After resting in this way, you gain the same benefit that you would from eight hours of sleep."
-				"Additionally, you become proficient in Constitution saving throws and gain resistance to poison."
+				"Starting at 10th LeveL if you spend at least 1 hour in the sunlight, you have access to potable water and your skin has touched fertile soil in the past 24 hours, you do not need to eat to survive. Instead of sleeping, you can choose to meditate deeply, remaining semiconscious, for four hours a day. After resting in this way, you gain the same benefit that you would from eight hours of sleep.",
+				"Additionally, you become proficient in Constitution saving throws and gain resistance to poison.",
 			]),
 		},
 		"subclassfeature14" : {
@@ -71,16 +71,16 @@ AddSubClass("warlock", "the great tree", {
 			source : ["LoL", 0],
 			minlevel : 14,
 			description : desc([
-				"Starting at 14th leveL you can use your bonus action to become assume a tree-like form for 1 minute. For the duration, you gain the following benefits:"
-				"You gain the effects of both the Enlarge/Reduce and Barkskin spells, without the need to concentrate on either one."
-				"The healing dice used for your Put Down Roots feature increase to dlOs, and you can spend up to 2 additional dice when you use them."
-				"When you hit a creature with your thorn whip, you can expend a warlock spell slot to deal 6d8 additional acid damage to the target."
-				"When you hit a creature with your thorn whip, you can use your bonus action to entangle the creature, which makes a Strength saving throw against your spell save DC, becoming restrained on a failure. A restrained creature can release itself by using its action to attempt another Strength save, being freed on a success. You can restrain multiple creatures at once in this manner, up to an amount equal to your Charisma modifier."
-				"Once you use this feature, you can't use it again until you finish a long rest."
+				"Starting at 14th leveL you can use your bonus action to become assume a tree-like form for 1 minute. For the duration, you gain the following benefits:",
+				"You gain the effects of both the Enlarge/Reduce and Barkskin spells, without the need to concentrate on either one.",
+				"The healing dice used for your Put Down Roots feature increase to dlOs, and you can spend up to 2 additional dice when you use them.",
+				"When you hit a creature with your thorn whip, you can expend a warlock spell slot to deal 6d8 additional acid damage to the target.",
+				"When you hit a creature with your thorn whip, you can use your bonus action to entangle the creature, which makes a Strength saving throw against your spell save DC, becoming restrained on a failure. A restrained creature can release itself by using its action to attempt another Strength save, being freed on a success. You can restrain multiple creatures at once in this manner, up to an amount equal to your Charisma modifier.",
+				"Once you use this feature, you can't use it again until you finish a long rest.",
 
 			]),
 			usages : 1,
 			recovery : "long rest"
-		}
+		},
 	}
-};
+});
