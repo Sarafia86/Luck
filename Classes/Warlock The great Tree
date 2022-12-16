@@ -18,7 +18,6 @@ SourceList["HB:LOoS"] = {
 };
 
 AddSubClass("warlock", "the great tree", {
-	regExpSearch : /^(((?=.*(tree))((?=.*warlock).*$/i,
 	subname : "the great tree",
 	source : ["HB:LOoS", 1],
 	spellcastingExtra : ["ensnaring strike", "entangle", "barkskin", "spike growth", "plant growth", "speak with plants", "grasping vine", "guardian of nature", "tree stride", "wrath of nature"],
@@ -84,4 +83,4 @@ AddSubClass("warlock", "the great tree", {
 			recovery : "long rest"
 		}
 	}
-});
+};
